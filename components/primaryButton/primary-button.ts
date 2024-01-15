@@ -3,7 +3,7 @@ import { customElement } from "lit/decorators.js";
 
 @customElement("primary-button")
 export class PrimaryButton extends LitElement {
-  static styles = css`
+	static styles = css`
     .button-style {
       font-weight: bold;
       color: #5e3232;
@@ -13,21 +13,21 @@ export class PrimaryButton extends LitElement {
     }
   `;
 
-  clickHandler() {
-    console.log("hello");
-  }
+	clickHandler() {
+		console.log("hello");
+	}
 
-  render() {
-    return html`
+	render() {
+		return html`
       <button @click=${this.clickHandler} class="button-style">
         <slot>button</slot>
       </button>
     `;
-  }
+	}
 }
 
 declare global {
-  interface HTMLElementTagNameMap {
-    "primary-button": PrimaryButton;
-  }
+	interface HTMLElementTagNameMap {
+		"primary-button": PrimaryButton;
+	}
 }

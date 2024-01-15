@@ -3,35 +3,35 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import "./my-button";
 
 describe("Button with increment", async () => {
-  function getInsideButton(): HTMLElement | null | undefined {
-    return document.body
-      .querySelector("my-button")
-      ?.shadowRoot?.querySelector("button");
-  }
+	function getInsideButton(): HTMLElement | null | undefined {
+		return document.body
+			.querySelector("my-button")
+			?.shadowRoot?.querySelector("button");
+	}
 
-  beforeEach(() => {
-    document.body.innerHTML = '<my-button name="World"></my-button>';
-  });
+	beforeEach(() => {
+		document.body.innerHTML = '<my-button name="World"></my-button>';
+	});
 
-  it("should increment the count on each click", () => {
-    getInsideButton()?.click();
-    expect(getInsideButton()?.textContent).toContain("1");
-  });
+	it("should increment the count on each click", () => {
+		getInsideButton()?.click();
+		expect(getInsideButton()?.textContent).toContain("1");
+	});
 
-  it("should show name props", () => {
-    getInsideButton();
-    expect(
-      document.body.querySelector("my-button")?.shadowRoot?.innerHTML
-    ).toContain("World");
-  });
+	it("should show name props", () => {
+		getInsideButton();
+		expect(
+			document.body.querySelector("my-button")?.shadowRoot?.innerHTML,
+		).toContain("World");
+	});
 
-  it("should dispatch count event on button click", () => {
-    const spyClick = vi.fn();
+	it("should dispatch count event on button click", () => {
+		const spyClick = vi.fn();
 
-    document.querySelector("my-button")!.addEventListener("count", spyClick);
+		document.querySelector("my-button")!.addEventListener("count", spyClick);
 
-    getInsideButton()?.click();
+		getInsideButton()?.click();
 
-    expect(spyClick).toHaveBeenCalled();
-  });
+		expect(spyClick).toHaveBeenCalled();
+	});
 });
