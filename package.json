@@ -11,16 +11,23 @@
     "coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",
     "storybook": "storybook dev -p 6006",
+    "test-storybook": "test-storybook",
     "build-storybook": "storybook build"
   },
   "dependencies": {
     "lit": "^3.1.1",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "shadow-dom-testing-library": "^1.11.2"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.5.1",
     "@storybook/addon-essentials": "^7.6.7",
+    "@storybook/addon-interactions": "^7.6.8",
     "@storybook/addon-links": "^7.6.7",
     "@storybook/blocks": "^7.6.7",
+    "@storybook/jest": "^0.2.3",
+    "@storybook/test-runner": "^0.16.0",
+    "@storybook/testing-library": "^0.2.2",
     "@storybook/web-components": "^7.6.7",
     "@storybook/web-components-vite": "^7.6.7",
     "@vitest/browser": "^1.1.3",
