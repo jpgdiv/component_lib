@@ -39,12 +39,12 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
-      - name: Setup Biome
-        uses: biomejs/setup-biome@v2
-        with:
-          version: latest
+      # - name: Setup Biome
+      #   uses: biomejs/setup-biome@v2
+      #   with:
+      #     version: latest
       - name: Run Biome
-        run: biome ci .
+        run: pnpm run format
       - name: test
         run: |
           pnpm run test
