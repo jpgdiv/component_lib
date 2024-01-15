@@ -8,5 +8,6 @@ export default defineConfig({
       enabled: true,
       name: "chrome",
     },
+    include:['**\/*.test.?(c|m)[jt]s?(x)'],
   },
 });
