@@ -7,7 +7,10 @@ export default defineConfig({
     browser: {
       enabled: true,
       name: "chrome",
+      headless: true,
     },
+    // environment: "jsdom",
     include:['**\/*.test.?(c|m)[jt]s?(x)'],
+
   },
 });

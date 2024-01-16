@@ -17,6 +17,8 @@
     "format:write": "pnpm dlx @biomejs/biome format --write ./components"
   },
   "dependencies": {
+    "@testing-library/dom": "^9.3.4",
+    "@testing-library/user-event": "^14.5.2",
     "lit": "^3.1.1",
     "rxjs": "^7.8.1",
     "shadow-dom-testing-library": "^1.11.2"
