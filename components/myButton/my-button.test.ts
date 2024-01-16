@@ -1,15 +1,22 @@
-import { beforeEach, describe, it, expect } from "vitest";
+
+import { beforeEach, afterEach, describe, it, expect } from "vitest";
 import userEvent from "@testing-library/user-event";
 
 import "./my-button";
+ 
 
 const clean = (text:string) => text.replace(/<!--.*-->/,"")
 
 describe("Button with increment", async () => {
-
+    let elem:HTMLElement;
   beforeEach(() => {
-    document.body.innerHTML = '<my-button name="World"></my-button>'
+    elem = document.createElement("my-button");
+    elem.setAttribute("name", "World")
+    document.body.appendChild(elem)
   });
+  afterEach(() => {
+    elem.remove()
+  })
  
   it("should increment the count on each click", async () => {
 
@@ -23,6 +30,7 @@ describe("Button with increment", async () => {
     }
     const button = litRoot.querySelector("button");
     const worldText = litRoot.querySelector("h1");
+
     if(button === null|| worldText === null) {
         return expect(false).toBeTruthy()
     }
